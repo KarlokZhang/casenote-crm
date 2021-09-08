@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   html, body, #app {
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
   }
