@@ -10,10 +10,10 @@ phases:
     commands:
       - echo Installing dependencies...
       - yarn
-  build:
-    commands:
       - echo Testing...
       - yarn run test
+  build:
+    commands:
       - echo Building...
       - yarn run build
 artifacts:
