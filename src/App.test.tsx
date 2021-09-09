@@ -4,6 +4,6 @@ import App from './App';
 
 test('render app', () => {
   render(<App />);
-  const linkElement = screen.getByText('react app');
+  const linkElement = screen.getByText('react app after Deploy');
   expect(linkElement).toBeInTheDocument();
 });
