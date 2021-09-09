@@ -2,14 +2,18 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 14
     commands:
-      - echo Installing Node 14...
-      - curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-      - apt install -y nodejs
-      - echo Installing Yarn...
-      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-      - apt install --no-install-recommends yarn
+      # - echo Installing Node 14...
+      # - curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+      # - apt install -y nodejs
+      # - echo Installing Yarn...
+      # - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      # - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      # - apt install --no-install-recommends yarn
+      # install yarn
+      - npm install yarn
   pre_build:
     commands:
       - echo Installing dependencies...
@@ -17,9 +21,9 @@ phases:
   build:
     commands:
       - echo Building...
-      - yarn build
+      - yarn run build
 artifacts:
   files:
     - '**/*'
   discard-paths: no
-  base-directory: dist
+  base-directory: 'build'
