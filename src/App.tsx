@@ -1,9 +1,22 @@
-function App() {
+import React from 'react';
+import styled from 'styled-components';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #f4f7fe;
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h2>react app after Deploy</h2>
-    </div>
+    <Wrapper className="App">
+      <Sidebar />
+      <Content />
+    </Wrapper>
   );
-}
+};
 
 export default App;
