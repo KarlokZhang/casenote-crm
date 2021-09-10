@@ -14,9 +14,7 @@ const App: React.FC = () => {
   return (
     <Wrapper className="App">
       <Sidebar />
-      <Content>
-        <div>react app after Deploy</div>
-      </Content>
+      <Content />
     </Wrapper>
   );
 };

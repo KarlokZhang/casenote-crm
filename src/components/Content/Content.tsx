@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-
+import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -7,12 +6,12 @@ const Container = styled.div`
   flex: 1;
 `;
 
-interface ContentProps {
-  children: ReactNode;
-}
-
-const Content: React.FC<ContentProps> = ({ children }) => {
-  return <Container>{children}</Container>;
+const Content: React.FC = () => {
+  return (
+    <Container>
+      <div>React app</div>
+    </Container>
+  );
 };
 
 export default Content;
