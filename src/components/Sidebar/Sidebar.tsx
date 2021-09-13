@@ -5,7 +5,7 @@ const SidebarContainer = styled.div`
   max-height: 100vh;
   height: 100%;
   width: 18rem;
-  background-color: red;
+  background-color: rgb(49, 53, 65);
 `;
 
 const Sidebar: React.FC = () => {
