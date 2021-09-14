@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 
+import MenuItem from './components/MenuItem';
+
 const SidebarContainer = styled.div`
   max-height: 100vh;
   height: 100%;
@@ -9,7 +11,13 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar: React.FC = () => {
-  return <SidebarContainer />;
+  return (
+    <SidebarContainer>
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+    </SidebarContainer>
+  );
 };
 
 export default Sidebar;

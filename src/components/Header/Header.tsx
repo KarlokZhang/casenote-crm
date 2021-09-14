@@ -12,7 +12,12 @@ const Wrapper = styled.div`
 `;
 
 const Header: React.FC = () => {
-  return <Wrapper>This is Header</Wrapper>;
+  return (
+    <Wrapper>
+      This is Header
+      <i className="las la-heading"></i>
+    </Wrapper>
+  );
 };
 
 export default Header;
