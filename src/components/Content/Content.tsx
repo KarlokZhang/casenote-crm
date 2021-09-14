@@ -7,12 +7,8 @@ const Container = styled.div`
   flex: 1;
 `;
 
-const Content: React.FC = () => {
-  return (
-    <Container>
-      <div>React app</div>
-    </Container>
-  );
+const Content: React.FC = ({ children }) => {
+  return <Container>{children}</Container>;
 };
 
 export default Content;

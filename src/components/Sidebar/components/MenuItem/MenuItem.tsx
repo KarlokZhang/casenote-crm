@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.a`
   padding: 8px 12px 8px 24px;
@@ -36,15 +37,17 @@ const IconWrapper = styled.div`
 type MenuProps = {
   title: string;
   icon: string;
+  link: string;
 };
 
-const MenuItem: React.FC<MenuProps> = ({ title, icon }) => {
+const MenuItem: React.FC<MenuProps> = ({ title, icon, link }) => {
   return (
-    <Wrapper href="#">
+    <Wrapper>
       <IconWrapper>
         <i className={`las la-${icon}`} />
       </IconWrapper>
       <span>{title}</span>
+      <Link to={link}>{title}</Link>
     </Wrapper>
   );
 };
