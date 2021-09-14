@@ -15,9 +15,8 @@ const Sidebar: React.FC = () => {
   return (
     <SidebarContainer>
       <UserInfo />
-      <MenuItem />
-      <MenuItem />
-      <MenuItem />
+      <MenuItem title="Dashboard" icon="home" />
+      <MenuItem title="Case Note" icon="clipboard-list" />
     </SidebarContainer>
   );
 };

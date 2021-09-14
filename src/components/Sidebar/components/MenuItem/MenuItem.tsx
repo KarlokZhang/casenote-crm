@@ -33,13 +33,18 @@ const IconWrapper = styled.div`
   padding: 0 1rem;
 `;
 
-const MenuItem: React.FC = () => {
+type MenuProps = {
+  title: string;
+  icon: string;
+};
+
+const MenuItem: React.FC<MenuProps> = ({ title, icon }) => {
   return (
     <Wrapper href="#">
       <IconWrapper>
-        <i className="las la-clipboard" />
+        <i className={`las la-${icon}`} />
       </IconWrapper>
-      <span>Case Note</span>
+      <span>{title}</span>
     </Wrapper>
   );
 };
