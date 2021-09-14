@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Wrapper = styled.a`
+const LinkWrapper = styled(Link)`
   padding: 8px 12px 8px 24px;
   margin-right: 24px;
   color: #808183;
@@ -24,7 +24,6 @@ const Wrapper = styled.a`
   :focus {
     background-color: #0a8fdc;
     border-radius: 0px 30px 30px 0px;
-    pointer-events: none;
     transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   }
 `;
@@ -42,13 +41,12 @@ type MenuProps = {
 
 const MenuItem: React.FC<MenuProps> = ({ title, icon, link }) => {
   return (
-    <Wrapper>
+    <LinkWrapper to={link}>
       <IconWrapper>
         <i className={`las la-${icon}`} />
       </IconWrapper>
       <span>{title}</span>
-      <Link to={link}>{title}</Link>
-    </Wrapper>
+    </LinkWrapper>
   );
 };
 
