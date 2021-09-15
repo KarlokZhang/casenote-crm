@@ -8,6 +8,7 @@ import Header from './components/Header';
 
 import CaseNotePage from './pages/CaseNotePage';
 import DashboardPage from './pages/DashboardPage';
+import ClientPage from './pages/ClientPage';
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,8 +32,9 @@ const App: React.FC = () => {
           <Header />
           <Switch>
             <Content>
-              <Route exact path="/" component={DashboardPage} />
+              <Route exact path="/dashboard" component={DashboardPage} />
               <Route path="/casenote" component={CaseNotePage} />
+              <Route path="/clients" component={ClientPage} />
             </Content>
           </Switch>
         </ContentWrapper>
