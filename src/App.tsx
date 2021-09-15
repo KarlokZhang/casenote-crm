@@ -32,7 +32,7 @@ const App: React.FC = () => {
           <Header />
           <Switch>
             <Content>
-              <Route exact path="/dashboard" component={DashboardPage} />
+              <Route path="/dashboard" component={DashboardPage} />
               <Route path="/casenote" component={CaseNotePage} />
               <Route path="/clients" component={ClientPage} />
             </Content>

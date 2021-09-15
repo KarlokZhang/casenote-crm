@@ -4,6 +4,8 @@ import React from 'react';
 import UserInfo from './components/UserInfo';
 import MenuItem from './components/MenuItem';
 
+import { SidebarConfig } from './SidebarConfig';
+
 const SidebarContainer = styled.div`
   max-height: 100vh;
   height: 100%;
@@ -15,9 +17,14 @@ const Sidebar: React.FC = () => {
   return (
     <SidebarContainer>
       <UserInfo />
-      <MenuItem title="Dashboard" icon="home" link="/dashboard" />
-      <MenuItem title="Case Note" icon="clipboard-list" link="/casenote" />
-      <MenuItem title="Clients" icon="user-friends" link="/clients" />
+
+      {SidebarConfig.map((menuItem) => (
+        <MenuItem
+          title={menuItem.title}
+          icon={menuItem.icon}
+          link={menuItem.path}
+        />
+      ))}
     </SidebarContainer>
   );
 };
