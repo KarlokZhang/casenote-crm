@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const LinkWrapper = styled(Link)<{ selected: any }>`
+const LinkWrapper = styled(Link)<{ select: any }>`
   padding: 8px 12px 8px 24px;
   margin-right: 24px;
   margin-top: 12px;
@@ -23,10 +23,10 @@ const LinkWrapper = styled(Link)<{ selected: any }>`
     background-color: #1a83ff;
   }
 
-  ${({ selected }) =>
-    selected &&
+  ${({ select }) =>
+    select &&
     css`
-      background-color: #0a8fdc;
+      background-color: #1a83ff;
       color: #ffffff;
       transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
     `}
@@ -41,17 +41,19 @@ type MenuProps = {
   title: string;
   icon: string;
   link: string;
+  selected: string;
+  onClick: () => void;
 };
 
-const MenuItem: React.FC<MenuProps> = ({ title, icon, link }) => {
-  const [state, setState] = useState(false);
-
-  const handleClick = () => {
-    setState((prevState) => !prevState);
-  };
-
+const MenuItem: React.FC<MenuProps> = ({
+  title,
+  icon,
+  link,
+  selected,
+  onClick,
+}) => {
   return (
-    <LinkWrapper to={link} selected={state} onClick={handleClick}>
+    <LinkWrapper to={link} select={selected === link} onClick={onClick}>
       <IconWrapper>
         <i className={`las la-${icon}`} />
       </IconWrapper>

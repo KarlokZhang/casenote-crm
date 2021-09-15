@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useState } from 'react';
 
 import UserInfo from './components/UserInfo';
 import MenuItem from './components/MenuItem';
@@ -14,6 +14,7 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar: React.FC = () => {
+  const [select, setSelect] = useState('');
   return (
     <SidebarContainer>
       <UserInfo />
@@ -23,6 +24,8 @@ const Sidebar: React.FC = () => {
           title={menuItem.title}
           icon={menuItem.icon}
           link={menuItem.path}
+          selected={select}
+          onClick={() => setSelect(menuItem.path)}
         />
       ))}
     </SidebarContainer>
