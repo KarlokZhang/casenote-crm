@@ -15,15 +15,17 @@ const SidebarContainer = styled.div`
 
 const Sidebar: React.FC = () => {
   const [select, setSelect] = useState('');
+
   return (
     <SidebarContainer>
       <UserInfo />
 
       {SidebarConfig.map((menuItem) => (
         <MenuItem
+          key={menuItem.title}
           title={menuItem.title}
           icon={menuItem.icon}
-          link={menuItem.path}
+          path={menuItem.path}
           selected={select}
           onClick={() => setSelect(menuItem.path)}
         />

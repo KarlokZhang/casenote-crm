@@ -26,9 +26,9 @@ const LinkWrapper = styled(Link)<{ select: any }>`
   ${({ select }) =>
     select &&
     css`
+      border-radius: 0px 30px 30px 0px;
       background-color: #1a83ff;
       color: #ffffff;
-      transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
     `}
 `;
 
@@ -40,7 +40,7 @@ const IconWrapper = styled.div`
 type MenuProps = {
   title: string;
   icon: string;
-  link: string;
+  path: string;
   selected: string;
   onClick: () => void;
 };
@@ -48,12 +48,16 @@ type MenuProps = {
 const MenuItem: React.FC<MenuProps> = ({
   title,
   icon,
-  link,
+  path,
   selected,
   onClick,
 }) => {
   return (
-    <LinkWrapper to={link} select={selected === link} onClick={onClick}>
+    <LinkWrapper
+      to={path}
+      select={selected === path ? 'true' : undefined}
+      onClick={onClick}
+    >
       <IconWrapper>
         <i className={`las la-${icon}`} />
       </IconWrapper>
