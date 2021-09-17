@@ -14,7 +14,7 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar: React.FC = () => {
-  const [select, setSelect] = useState('');
+  const [select, setSelect] = useState<string>('');
 
   return (
     <SidebarContainer>

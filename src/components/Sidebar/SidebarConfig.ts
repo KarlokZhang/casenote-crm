@@ -5,7 +5,7 @@ export const SidebarConfig = [
     icon: 'home',
   },
   {
-    title: 'Case Note',
+    title: 'Case Notes',
     path: '/casenote',
     icon: 'clipboard-list',
   },
