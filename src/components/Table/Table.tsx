@@ -40,11 +40,14 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         </tr>
       </thead>
       <tbody>
-        {columns.map((row, index) => (
+        {data.map((row, index) => (
           <TableRow key={index}>
-            {Object.keys(data).map((key) => (
-              <TableData key={key}>{data[index]}</TableData>
-            ))}
+            <TableData>{row.name}</TableData>
+            <TableData>{row.position}</TableData>
+            <TableData>{row.office}</TableData>
+            <TableData>{row.extn}</TableData>
+            <TableData>{row.startDate}</TableData>
+            <TableData>{row.salary}</TableData>
           </TableRow>
         ))}
       </tbody>
