@@ -1,34 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTable } from 'react-table';
 
-const StyledTable = styled.div`
-  padding: 1rem;
+const StyledTable = styled.table`
+  width: 100%;
+  border: 1px solid;
+  border-color: #dadada;
+`;
 
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
+const TableRow = styled.tr`
+  border-top: 1px solid;
+  border-color: #dadada;
+`;
 
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
+const TableData = styled.td`
+  height: 50px;
+  padding: 8px 16px;
+`;
 
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-  }
+const TableHead = styled.th`
+  height: 50px;
+  padding: 0 16px;
+  font-weight: 700;
+  text-align: left;
 `;
 
 type TableProps = {
@@ -37,34 +30,24 @@ type TableProps = {
 };
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
-
   return (
     <StyledTable>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-              ))}
-            </tr>
+      <thead>
+        <tr>
+          {columns.map((header) => (
+            <TableHead key={header.accessor}>{header.Header}</TableHead>
           ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row, idx) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return <td>{cell.render('Cell')}</td>;
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+        </tr>
+      </thead>
+      <tbody>
+        {columns.map((row, index) => (
+          <TableRow key={index}>
+            {Object.keys(data).map((key) => (
+              <TableData key={key}>{data[index]}</TableData>
+            ))}
+          </TableRow>
+        ))}
+      </tbody>
     </StyledTable>
   );
 };

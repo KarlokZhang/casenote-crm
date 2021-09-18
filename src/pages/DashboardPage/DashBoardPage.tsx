@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Table from '../../components/Table';
 import { sampleData, columns } from '../../components/Table/sampleTableData';
 
