@@ -9,8 +9,9 @@ import { SidebarConfig } from './SidebarConfig';
 const SidebarContainer = styled.div`
   max-height: 100vh;
   height: 100%;
-  width: 24rem;
+  width: 18rem;
   background-color: #313541;
+  position: fixed;
 `;
 
 const Sidebar: React.FC = () => {

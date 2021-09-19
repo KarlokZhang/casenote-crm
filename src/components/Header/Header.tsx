@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   height: 70px;
+  position: fixed;
 `;
 
 const Header: React.FC = () => {
