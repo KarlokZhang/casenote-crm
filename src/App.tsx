@@ -13,7 +13,7 @@ import ClientPage from './pages/ClientPage';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f4f7fe;
 `;
 
